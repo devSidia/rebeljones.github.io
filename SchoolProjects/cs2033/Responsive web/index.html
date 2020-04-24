@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>shopUIS.com</title>
+    <!--VANILLA JS-->
+        <script src="js/events.js" type="text/javascript"></script>
+    <!--FONT-->
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Open+Sans&family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+     <!--RESPONSIVE CSS-->
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="css/resp-styles.css" rel="stylesheet" type="text/css">
+    
+    </head>
+    
+    <body onscroll="headerScroll();">
+    <div class="wrapper">
+        <!--INVISIBLE NAVIGATION-->
+        <section id="">
+            <a href="#top-sec" id="l1"></a>
+            <a href="#about-sec" id="l2"></a>
+            <a href="#product-sec" id="l3"></a>
+            <a href="#account-sec" id="l4"></a>
+            <a href="#reference-sec" id="l5"></a>
+        </section>
+        
+    <!--TOP-->
+        <a name="top-sec" id="s1"></a>
+        <section>
+            <div class="bannerImg" id="guitarWall" onscroll="guitarscroll();"></div>
+            <div id="covidbox">
+                <div class="covid-position" id="covidTxt" >COVID-19 Changes<br>Stores will remain open, but only for curbside pickup until 6pm daily following an online order on www.shopUIS.com.
+                We also continue to offer flexible delivery options for purchases made online, including free parcel delivery and contact-free home delivery.</div>  
+                <div class="covid-position" id="covidX" onclick=closeCovid();>x</div>
+            </div>
+        </section>
+<div class="content" id="content" >
+        
+    <div class="companyName" id="title-banner" onscroll="headerScroll();">
+            Universal  &nbsp;Instrument  &nbsp;Supplies
+        </div>
+
+        
+    <!--ABOUT-->
+        <a name="about-sec" id="s2"></a>
+        <section>
+            <div class="space"></div>
+            <div class="container" id="about-display">
+                <div class="sub-title" id="abt-title">ABOUT US</div>
+                <div class="about-display" id="about-txt">
+                    <img src="images/womanplaying.png" id="womanplaying"   class="about-img float-left">
+                    Since 1989 we have been supplying the New Orleans community with their musical instrument needs. New Orleans has rich culture of music that is historically centered around traditional Jazz. 
+                    <div class="boxspace"></div>
+                    During Mardi Gras season its hard to keep the products on our shelves. This once small shop has grown from a local farmers market booth to a permanent location located in the downtown core. <div class="boxspace"></div>
+                    <img src="images/manplaying.png" id="manplaying" class="about-img float-right">
+                    Since opening up our storefront in 1995, we have expanded to providing exceptional service and equipment online. We are happy to accomodate any of your needs.
+                    <div class="boxspace"></div>
+                    We sell most major brands of musical instruments, music software and professional audio equipment. 
+                    <br>
+                    
+                    <br>Other Services:
+                    <ul>
+                        <li>Equipment rental </li>
+                        <li>Easy financing options </li>
+                        <li> On-site certified guitar technician </li>
+                        <li>A large selection of print music and band instruments </li>
+                    </ul>
+                    Come by and visit!
+                </div>
+                <div class="boxspace"></div>
+            
+            </div>
+        </section>
+                
+    <!--SLOGAN-->
+        <section>
+            <div class="space"></div>
+            <div class="slogan">
+                <img id="slogan-img" src="images/slogan.png">
+            </div>
+        </section>
+
+    <!--PRODUCTS-->
+        <a name="product-sec" id="s3"></a>
+        <section>
+            <div class="container" id="product-container">
+                <div class="sub-title" id="prod-title">PRODUCTS</div>
+                <div class="productBox">
+                        <div><img src="images/saxophone.png" class="product-img"></div>
+                    <div class="txt-container">
+                        <div class="product-head">Custom Tenor Saxophone</div>
+                        <div class="prod-info" id="product-code">SAX346 | YAMAHA BAND</div>
+                        <div class="product-txt">Feature a solid feel with quick and nimble action, a wide dynamic range, stunning projection, and an authoritative tone with a beautifully defined total core. You will find that the depth and smoothness of their sound is simply incredible, and you will also find that these horns are very flexible, at home in any kind of music...</div>
+                        <div class="" id="product-cost">&#36; 6,539.00 USD</div>
+                    </div>
+                    <div class="" id="product-btn">ADD TO CART</div>
+                </div>
+                
+                <div class="productBox">
+                    <div> <img src="images/trumpet.png" class="product-img"></div>
+                    <div class="txt-container">
+                        <div class="product-head">184ML Stradivarius Series Bb Cornet</div>
+                        <div class="prod-info" id="product-code">TRU778 | BACH</div>
+                        <div class="product-txt">This instrument follows the traditional shepherd's crook short model design. The Shepherds crook bell design-provides a darker sound that is popular with British brass bands. The .459" medium large bore promotes an ease of response. The one-piece hand-hammered professional bell produces a warm sound with ample projection. The clear lacquer finish provides a subtle warmth to the overall sound....</div>
+                        <div class="" id="product-cost">&#36; 3,950.00 USD</div>
+                    </div>
+                    <div class="" id="product-btn">ADD TO CART</div>
+                </div>
+                
+                <div class="productBox">
+                    <div> <img src="images/violin.png" class="product-img"></div>
+                    <div class="txt-container">
+                        <div class="product-head">Violin Outfit 1/2 Size</div>
+                        <div class="prod-info" id="product-code">VIO983 | EASTMAN STRINGS</div>
+                        <div class="product-txt">These instruments have been crafted by hand from seasoned tonewoods, and installed with top quality ebony fittings. Samuel Eastman model 80 violins offer unparalleled quality of sound and playability in an entry level instrument. Outstanding features include beautiful, select tonewoods, genuine hand-inlaid purfling, and a glowing amber-brown varnish that is durable as well as attractive....</div>
+                        <div class="" id="product-cost">&#36; 775.00 USD</div>
+                    </div>
+                    <div class="" id="product-btn">ADD TO CART</div>
+                </div>
+                
+                
+                
+            </div>
+        </section>
+        
+        
+        <!--ACCOUNT-->
+    <a name="account-sec" id="s4"></a>
+        <section>
+            <div class="space"></div>
+            <div class="account-img"></div>
+            <div class="container">
+                <div class="sub-title" id="acct-title">ACCOUNT</div>
+                
+                <div class="account-section" id="account-section">
+                    <!--LOGIN FORM - DEFAULT-->
+                     <div id="login" class="account-box">
+                        <div class="account-head">LOGIN</div>
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <div class="account-label">Username</div>
+                        <input class="account-input" type="text" id="log-username">
+                        <div class="boxspace"></div>
+                        <div class="account-label">Password</div>
+                        <input class="account-input" type="password" id="log-password">
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <input class="input-btn" type="button" value="LOGIN" onclick="loginAccount();">
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <div id="account-subT">Don't have an account?</div>
+                        <div class="boxspace"></div>
+                        <div class="selection-box">
+                            <input class="btn-box" id="register-btn" type="button" value="REGISTER" onclick="registerBtn();">      
+                        </div>
+                    </div>
+                    
+                    <!--REGISTRATION FORM - HIDDEN-->
+                    <div id="registration" class="hidden account-box">
+                        <div class="account-head">REGISTER</div>
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <div class="account-label">Username</div>
+                        <input class="account-input" type="text" id="reg-username">
+                        <div class="boxspace"></div>
+                        <div class="account-label">Password</div>
+                        <input class="account-input" type="password" id="reg-password">
+                        <div class="boxspace"></div>
+                        <div class="account-label">Confirm Password</div>
+                        <input class="account-input" type="password" id="reg-confirmpassword">
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <input class="input-btn" type="button" value="REGISTER" onclick="registerAccount();">
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <div class="boxspace"></div>
+                        <div id="account-subT">Already have an account?</div>
+                        <div class="boxspace"></div>
+                        <div class="selection-box">
+                            <input class="btn-box" id="login-btn" onclick="loginBtn();" type="button" value="LOGIN">
+                        </div>
+                    </div>
+                    
+                </div>
+               
+            </div>
+        </section>
+        
+        
+        <!--REFERENCES-->
+    <a name="reference-sec" id="s5"></a>
+        <section>
+            <div class="space"></div>
+            <div class="account-img"></div>
+            <div class="container" id="ref-box">
+                <div class="about-title" id="">REFERENCES</div>
+                <div id="reference-subT">Images are listed in order of appearance:</div>
+                <div class="boxspace"></div>
+                <div id="reference-text">
+                    Parallax Image of Guitar Wall:<br><a href="https://unsplash.com/photos/nuRL2Wveb6w" target="_blank">https://unsplash.com/photos/nuRL2Wveb6w</a>
+                    
+                    <br>Image of Female Playing Guitar:<br><a href="https://unsplash.com/photos/yvx7LSZSzeo" target="_blank">https://unsplash.com/photos/yvx7LSZSzeo</a>
+                    
+                    <br>Image of Male Playing Guitar:<br><a href="https://unsplash.com/photos/qtYhAQnIwSE" target="_blank">https://unsplash.com/photos/qtYhAQnIwSE</a>
+
+                    <br> Music Notes image used for Logo Mask<br><a href="https://www.pexels.com/photo/music-notes-934067/" target="_blank">https://www.pexels.com/photo/music-notes-934067/</a>
+
+                    <br>Image of Saxophone:<br><a href="https://pixabay.com/photos/saxophone-musical-instrument-music-1672675/" target="_blank">https://pixabay.com/photos/saxophone-musical-instrument-music-1672675/</a>
+                    
+                    <br>Image of Trumpet:<br><a href="https://pixabay.com/photos/trumpet-horn-wind-instrument-2878648/" target="_blank">https://pixabay.com/photos/trumpet-horn-wind-instrument-2878648/</a>
+                    
+                    <br>Image of Violin:<br><a href="https://pixabay.com/photos/music-violin-classical-4116645/" target="_blank">https://pixabay.com/photos/music-violin-classical-4116645/</a>
+                    
+                    <br>Parallax Image of Piano:<br><a href="https://www.pexels.com/photo/the-piano-keyboard-5934/" target="_blank">https://www.pexels.com/photo/the-piano-keyboard-5934/</a>
+
+                </div>
+            </div>
+        </section>
+        <div class="footer">&copy; 2020 Universal Instrument Supplies. All Rights Reserved.</div>
+        </div>
+    </div>
+    <!-- JS-->
+        <script src="js/scroll.js" type="text/javascript"></script>
+    </body>
+</html>
