@@ -1,0 +1,178 @@
+@keyframes flashBorderStyle {
+    0% { border-style: dashed; }
+    50% { border-style: dotted; }
+    100% { border-style: dashed; }
+}
+
+.border_s {
+    animation: flashBorderStyle 1s infinite;
+    border: dashed 5px rgba(45,192,192,0.95);
+}
+.img-grow {
+  transition: width 2s, height 2s, transform 2s;
+}
+
+.img-grow:hover{
+    width: 115%;
+
+}		
+#navsect {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    padding-top:0;
+    z-index:999;
+}
+nav{
+    bottom:1px;
+}
+html{  
+    scroll-behavior: smooth;
+}
+h1, h3, .h3{
+    font-family: 'Anton', sans-serif;
+    color: rgb(45,192,192);
+    text-shadow: -1px 2px 5px #000000;
+    text-align: center;
+}
+section{
+    padding:0;
+}
+.footer{
+    padding:0;
+    margin-bottom: 0%
+}
+.sec1{
+    height:10vh;
+}
+
+.main{
+    width:100%;
+}
+.nav-colr{
+    background-color: rgba(45,192,192,0.95);
+    font-size:125%;
+    font-family: 'Anton', sans-serif;
+}
+.full-scr{
+    height:90vh;
+}
+
+.space {
+    margin-bottom:60px;
+}
+
+#refimg{
+    width:10px;
+}
+body{
+     position: relative;   
+}
+footer{
+    font-family: 'Anton', sans-serif;
+    font-size: .8rem;
+    padding:2% 2% 0% 2%;
+    color:black;
+    width:100%;
+    position:relative;
+    bottom:0px;
+}
+.backfcolor{
+    background-color: rgba(45,192,192,0.95);
+    width: 100%;
+}
+.backcolor{
+    background-color:white;
+    width: 100%;
+}
+.ref-text{
+    color:black;
+    font-family: 'Roboto', sans-serif;
+}
+.refsize{
+    width: 5rem;
+}
+.titleheader{
+	text-align: center; 
+    text-shadow: 5px 3px 9px #000000;
+    font-family: 'Anton', sans-serif;
+	font-size: 400%;
+	color: rgba(45,192,192,0.9);
+    background-color: rgba(200,200,200,0.5);
+    border-radius:10px;
+    width:50%;
+	position:absolute;
+	top: 1%;
+	left: 10px;
+}
+.subheader{
+	text-align: center; 
+    text-shadow: 5px 3px 9px #000000;
+    font-family: 'Rock Salt', cursive;;
+	font-size: 125%;
+	color: white;
+    background-color: rgba(50,50,50,0.5);
+    border-radius:10px;
+    width:50%;
+	position:absolute;
+	top: 0.3%;
+	left: 10px;
+}
+.outer {
+	/* Notice the filepath starts with ../ to go out of the css folder to the root project folder. Then it goes into the images folder to find canndy.jpg. */
+	background-image: url("../images/runner.png");
+	background-attachment: fixed;
+    background-size:cover;
+    background-repeat: no-repeat;
+	position:relative;
+	width:100%;
+	height:200px;
+}
+
+.outer-top{
+    background-image: url("../images/boxing.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    position:relative;
+    width: 100%;
+    height: 70%;
+}
+.inner {
+	text-align: center; 
+    text-shadow: 5px 3px 9px #000000;
+    font-family: 'Rock Salt', cursive;
+	font-size: 200%;
+	color: rgba(255,255,255,.9);
+	position:relative;
+    background-color: rgba(10,10,10,0.5);
+    width:100%;
+    height:100px;
+}
+
+.sec-block{
+    display: block;
+}
+sec-container{
+    padding:5%;
+   
+}
+.about-imgsize{
+    width:100%;
+}
+.wrapper{
+    padding: 2%;
+}
+.wrapper-about{
+    padding: 2% 6% 0% 6%;
+}
+.team-text{
+    size:34px;
+}
+.hidden {
+    /*visibility: hidden;*/
+    display: none;
+}
+.visible {
+    /*visibility: visible;*/
+    display: block;
+}
