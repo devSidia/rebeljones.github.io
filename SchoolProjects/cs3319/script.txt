@@ -1,0 +1,104 @@
+-- build the database
+SHOW DATABASES;
+DROP DATABASE IF EXISTS sclar322assign2db;
+CREATE DATABASE sclar322assign2db;
+USE sclar322assign2db;
+
+--  grant TA access
+GRANT USAGE ON *.* TO 'ta'@'localhost';
+DROP USER 'ta'@'localhost';
+CREATE USER 'ta'@'localhost' IDENTIFIED BY 'cs3319';
+GRANT ALL PRIVILEGES ON sclar322assign2db.* TO 'ta'@'localhost';
+FLUSH PRIVILEGES;
+
+-- create the tables
+SHOW TABLES;
+
+CREATE TABLE doctor (docLicNum CHAR(4) NOT NULL, firstName VARCHAR(20), lastName VARCHAR(20), speciality VARCHAR(30), licenseDate DATE, hosWorksAt CHAR(3), PRIMARY KEY (docLicNum));
+
+CREATE TABLE patient(ohip CHAR(9) NOT NULL, firstname VARCHAR(20), lastname VARCHAR(20), PRIMARY KEY (ohip));
+
+CREATE TABLE treats (docLicNum CHAR(4) NOT NULL, ohip CHAR(9) NOT NULL,  FOREIGN KEY (ohip) REFERENCES patient(ohip), FOREIGN KEY (docLicNum) REFERENCES doctor(docLicNum) ON DELETE CASCADE, PRIMARY KEY (ohip,docLicNum) );
+
+CREATE TABLE hospital(hosCode CHAR(3) NOT NULL, name VARCHAR(20), city VARCHAR(20), province CHAR(2), numBeds INT(4), headDoc CHAR(4), headDocStartDate DATE, PRIMARY KEY (hosCode), FOREIGN KEY (headDoc) REFERENCES doctor(docLicnum));
+
+SHOW TABLES;
+
+-- load data from file
+USE sclar322assign2db;
+
+SELECT * FROM patient;
+LOAD DATA LOCAL INFILE 'loaddatafall2019.txt' INTO TABLE patient FIELDS TERMINATED BY ',';
+
+-- insert another patient
+
+SELECT * FROM patient;
+INSERT INTO patient(ohip, firstname, lastname) VALUES ('250940009','Sidia', 'Clarke');
+SELECT * FROM patient;
+
+-- insert doctors 
+
+SELECT * FROM doctor;
+INSERT INTO doctor (docLicNum,firstName,lastName,speciality,licenseDate) VALUES ('RD34','Bernie', 'Kavorikian', 'Urologist','1980-9-9');
+INSERT INTO doctor (docLicNum,firstName,lastName,speciality,licenseDate) VALUES ('GD56','Joey', 'Shabado', 'Padiatrist','1960-6-24');
+INSERT INTO doctor (docLicNum,firstName,lastName,speciality,licenseDate) VALUES ('HT45','Ross', 'Clooney', 'Surgeon','1987-6-20');
+INSERT INTO doctor (docLicNum,firstName,lastName,speciality,licenseDate) VALUES ('YT67','Ben', 'Spock', 'Pediatritian','1955-2-20');
+INSERT INTO doctor (docLicNum,firstName,lastName,speciality,licenseDate) VALUES ('JK78','Mandy', 'Webster', 'Surgeon','1990-8-8');
+INSERT INTO doctor (docLicNum,firstName,lastName,speciality,licenseDate) VALUES ('SE66','Colleen', 'Aziz', 'Surgeon','1989-8-24');
+INSERT INTO doctor (docLicNum,firstName,lastName,speciality,licenseDate) VALUES ('JM33','Phil', 'McGraw', 'Urologist','1980-9-9');
+SELECT * FROM doctor;
+
+-- insert hospitals 
+
+SELECT * FROM hospital;
+INSERT INTO hospital VALUES ('BBC', 'St. Joseph', 'London','On', 1000, 'GD56', '1999-9-10');
+INSERT INTO hospital VALUES ('ABC', 'Victoria', 'London','On', 1600, 'YT67', '1997-12-7');
+INSERT INTO hospital VALUES ('DDE', 'Victoria', 'Victoria', 'BC', 1200, 'SE66', '1994-12-5');
+
+ALTER TABLE doctor ADD FOREIGN KEY (hosWorksAt) REFERENCES hospital(hosCode);
+
+SELECT * FROM hospital;
+
+-- insert who treats whom
+
+SELECT * FROM treats;
+INSERT INTO treats VALUES ('GD56', '110112113');
+INSERT INTO treats VALUES ('YT67', '111222111');
+INSERT INTO treats VALUES ('SE66', '111222333');
+INSERT INTO treats VALUES ('YT67', '111222333');
+INSERT INTO treats VALUES ('JK78', '111222333');
+INSERT INTO treats VALUES ('GD56', '333444555');
+INSERT INTO treats VALUES ('HT45', '444555666');
+INSERT INTO treats VALUES ('JK78', '444555666');
+INSERT INTO treats VALUES ('YT67', '667766777');
+INSERT INTO treats VALUES ('JK78', '667766777');
+INSERT INTO treats VALUES ('GD56', '667766777');
+INSERT INTO treats VALUES ('JM33', '250940009');
+SELECT * FROM treats;
+
+-- assign doctors to hospitals 
+
+SELECT * FROM doctor;
+UPDATE doctor SET hosWorksAt = 'BBC' WHERE docLicNum = 'RD34';
+UPDATE doctor SET hosWorksAt = 'BBC' WHERE docLicNum = 'GD56';
+UPDATE doctor SET hosWorksAt = 'DDE' WHERE docLicNum = 'HT45';
+UPDATE doctor SET hosWorksAt = 'DDE' WHERE docLicNum = 'YT67';
+UPDATE doctor SET hosWorksAt = 'BBC' WHERE docLicNum = 'JK78';
+UPDATE doctor SET hosWorksAt = 'ABC' WHERE docLicNum = 'SE66';
+UPDATE doctor SET hosWorksAt = 'ABC' WHERE docLicNum = 'JM33';
+SELECT * FROM doctor;
+
+-- change a last name
+SELECT * FROM patient;
+UPDATE patient SET lastname = 'Brown' WHERE ohip='111222111';
+SELECT * FROM patient;
+
+-- change a doctor for the patients
+
+SELECT * FROM treats;
+UPDATE treats SET docLicNum = 'HT45' WHERE docLicNum IN (SELECT docLicNum FROM doctor WHERE lastName ='Spock') ; 
+
+SELECT * FROM treats;
+
+
+
