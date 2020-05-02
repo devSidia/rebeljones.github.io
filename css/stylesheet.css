@@ -5,3 +5,7 @@ body{
     background: linear-gradient(45deg, rgba(74,0,251,1) 0%, rgba(9,9,121,1) 35%, rgba(230,0,255,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4a00fb",endColorstr="#e600ff",GradientType=1);
 }
+.container{
+    background-color: white;
+    width:60%;
+}
